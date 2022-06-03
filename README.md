@@ -67,7 +67,7 @@ end
   W -->|"true"| A
   W -->|"false"| X{"HP>0?"}
   X -->|"true"|G
-  X -->|"false"| end(["終了"])
+  X -->|"false"| finish(["終了"])
 ```
 
 ## シーケンス図
