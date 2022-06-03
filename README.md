@@ -19,9 +19,9 @@ Mermaidを触ってみよう
 ## 解答
 ```mermaid
 flowchart LR;
-  start([開始]) -> A
+  start([開始]) --> A[階層を生成]
 subgraph 階層開始
-  A[階層を生成] --> B{現在の階層が1}
+  A --> B{現在の階層が1}
   B -->|true| C["あらたな冒険者がまた塔を登る……"]
   B -->|false| D{現在の階層を3で割ったあまりは1}
   D -->|true| E[難易度増加表示]
