@@ -18,7 +18,7 @@ Mermaidを触ってみよう
 
 ## 解答
 ```mermaid
-flowchart LR;
+flowchart TB;
   start([開始]) --> A[階層を生成]
 subgraph 階層開始
   A --> B{"現在の階層が1"}
