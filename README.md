@@ -31,29 +31,43 @@ subgraph 階層開始
   F -->join
 end
   join --> G["移動する方向を入力してください(テンキー):"]
-subgraph 階層攻略
+subgraph プレイヤーの行動
   G --> H{"2か4か6か8が入力されたか？"}
   H -->|true| I["移動先を決定"]
   H -->|false| J{"5が入力されたか？"}
   J -->|true| K{"巻物を持っているか？"}
   K -->|true| L["巻物の使用"]
   K -->|false| join1{" "}
+  J -->|false| join1
   L --> join1
   I --> M{"移動先はエリア内か？"}
   M -->|true| N{"移動"}
   M -->|false| join1
   N --> O{"移動先は？"}
-subgraph 移動先処理
-  O -->|"敵"| P["敵を倒す"]
-  O -->|"アイテム"| Q["アイテムを取得"]
-  O -->|"瓦礫"|　R["ダメージ"]
-end
+  subgraph 移動先処理
+    O -->|"敵"| P["敵を倒す"]
+    O -->|"アイテム"| Q["アイテムを取得"]
+    O -->|"瓦礫"|　R["ダメージ"]
+  end
   O -->|"道"| join1
   P -->join1
   Q -->join1
   R -->join1
 end
-  join1 --> S["敵の移動"]
+  join1 --> S{"敵は生きているか?"}
+subgraph 敵の行動
+  S -->|"true"| T{プレイヤーと隣接しているか?}
+  S -->|"false"| join2{" "}
+  T -->|"true"| U[攻撃]
+  T -->|"false"| V[移動]
+  U -->join2
+  V -->join2
+end
+  join2 --> W{"階段に到着?"}
+  W -->|"true"| A
+  W -->|"false"| X{"HP>0?"}
+  X -->|"true"|G
+  X -->|"false"| end([終了])
 ```
 
 ## シーケンス図
