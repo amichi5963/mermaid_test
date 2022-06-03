@@ -26,7 +26,7 @@ subgraph 階層開始
   B -->|false| D{"現在の階層を3で割ったあまりは1？"}
   D -->|true| E["難易度増加表示"]
   D -->|false| F["階数のみの表示"]
-  C -->join{}
+  C -->join{""}
   E -->join
   F -->join
 end
