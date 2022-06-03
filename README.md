@@ -20,6 +20,7 @@ Mermaidを触ってみよう
 ```mermaid
 flowchart TB;
   start([開始]) --> A[階層を生成]
+subgraph
 subgraph 階層開始
   A --> B{"現在の階層が1"}
   B -->|true| C["あらたな冒険者がまた塔を登る……"]
@@ -67,6 +68,7 @@ end
   W -->|"true"| A
   W -->|"false"| X{"HP>0?"}
   X -->|"true"|G
+end
   X -->|"false"| finish(["終了"])
 ```
 
