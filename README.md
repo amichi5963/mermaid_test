@@ -112,11 +112,11 @@ subgraph 死亡処理
 end
 
   QesD -->|"やめる"| finish(["終了"])
-subgraph クリア処理
+
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
   Goal --> Qes{"冒険を続ける?"}
   Qes -->|冒険を続ける| G
-end
+
   Qes -->|塔を降りる| finish
 ```
 
