@@ -49,16 +49,14 @@ end
 subgraph プレイヤーの行動
   join --> G
   joinT -->G
-subgraph コマンド
+
   G --> H{"何が入力<br/>された？"}
   H -->|5 | K{"巻物を<br/>持っている？"}
   K -->|false| NoMakimono["巻物を<br/>持っていません"]
   K -->|true| L["巻物の使用"]
   H -->|2or4or6or8| I["移動先を決定"]
-  NoMakimono -->join0{" "}
+  NoMakimono -->J
   H -->|else       | J["行動に失敗"]
-  J --> join0
-end
   join0 --> join3
 subgraph 巻物処理
   L --> DelStt[/破壊<br/>Start\]
@@ -73,7 +71,7 @@ subgraph 移動先処理
   I --> M{"移動先は<br/>エリア内か？"}
   M -->|true| N["移動"]
   M -->|false| CantMove["塔の壁から出ることは出来ません"]
-  CantMove --> join1
+  CantMove --> J
   N --> O{"移動先は？"}
   O -->|"敵"| P["敵を倒す"]
   O -->|"アイテム"| Q["アイテムを取得"]
@@ -83,7 +81,7 @@ end
   P -->join1
   Q -->join1
   R -->join1
-  join1 --> join3{" "}
+  J --> join3{" "}
   DelEnd --> join3
 end
 
