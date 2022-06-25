@@ -46,8 +46,12 @@ subgraph 財宝
   Box --> joinT
   Armer --> joinT
 end
+subgraph Clear クリア
+  B --> Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
+end
 
 subgraph プレイヤーの行動
+  Goal -->|冒険を続ける| G
   join --> G
   joinT -->G
   G --> H{"何が入力<br/>された？"}
@@ -105,6 +109,7 @@ end
   join2 --> W
 end
   X -->|"false"| finish(["終了"])
+  Goal -->|塔を降りる| --> finish
 ```
 
 ## シーケンス図
