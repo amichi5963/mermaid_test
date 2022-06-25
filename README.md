@@ -104,6 +104,7 @@ end
   join3 --> S
   join2 --> W
   
+subgraph 終了処理  
   X -->|"false"| death["あなたは力尽き、倒れた"]
   death --> QesD{"リプレイ?"}
   QesD -->|"リプレイ"| A
@@ -114,7 +115,7 @@ end
   Goal --> Qes{"冒険を続ける?"}
   Qes -->|冒険を続ける| G
   Qes -->|塔を降りる| joinEnd
-
+end
   joinEnd --> finish(["終了"])
 ```
 
