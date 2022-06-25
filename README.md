@@ -18,10 +18,10 @@ Mermaidを触ってみよう
 
 ## 解答
 ```mermaid
-flowchart TB;
+flowchart LR;
   start([開始]) --> A[階層を生成]
 subgraph ゲーム
-subgraph 階層開始
+subgraph TB 階層開始
   A --> B{"現在の階層"}
   B -->|1| C["あらたな冒険者がまた塔を登る……"]
   B -->|1以外| D{"現在の階層を<br/>3で割ったあまり"}
@@ -35,13 +35,13 @@ end
 subgraph プレイヤーの行動
   G --> H{"何が入力<br/>された？"}
   H -->|2or4or6or8| I["移動先を決定"]
-  H -->|5| K{"巻物を持っているか？"}
+  H -->|5| K{"巻物を<br/>持っているか？"}
   K -->|true| L["巻物の使用"]
   K -->|false| join1{" "}
   H -->|else| join1
   L --> join1
-  I --> M{"移動先はエリア内か？"}
-  M -->|true| N{"移動"}
+  I --> M{"移動先は<br/>エリア内か？"}
+  M -->|true| N["移動"]
   M -->|false| join1
   N --> O{"移動先は？"}
   subgraph 移動先処理
@@ -54,9 +54,9 @@ subgraph プレイヤーの行動
   Q -->join1
   R -->join1
 end
-  join1 --> S{"敵は生きているか?"}
+  join1 --> S{"敵は生きて<br/>いるか?"}
 subgraph 敵の行動
-  S -->|"true"| T{プレイヤーと隣接しているか?}
+  S -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
   S -->|"false"| join2{" "}
   T -->|"true"| U[攻撃]
   T -->|"false"| V[移動]
