@@ -56,8 +56,8 @@ subgraph プレイヤーの行動
   NoMakimono --> J
   H -->|else| J["行動に失敗"]
   J --> join3{" "}
-subgraph 巻物処理
   H -->|5 | K{"巻物を<br/>持っている？"}
+subgraph 巻物処理
   K -->|false| NoMakimono["巻物を<br/>持っていません"]
   L --> DelStt[/破壊<br/>Start\]
   DelStt --> Kill["敵を倒す"]
