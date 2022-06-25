@@ -63,7 +63,8 @@ subgraph 巻物処理
   DelStt --> Kill["敵を倒す"]
   Kill --> Break["瓦礫を道にする"]
   Break --> For{"視界内全マス<br/>破壊した?"}
-  For -->|False| Kill
+  For -->|False| Next[次の処理]
+  Next -->Kill
   For -->|True| DelEnd[\破壊ループ<br/>End/]
 end
 subgraph 移動先処理
