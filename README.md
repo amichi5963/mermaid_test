@@ -37,7 +37,8 @@ subgraph プレイヤーの行動
   H -->|5| K{"巻物を<br/>持っているか？"}
   K -->|true| L["巻物の使用"]
   K -->|false| join0{" "}
-  H -->|else| join0
+  H -->|else| J["行動に失敗"]
+  J --> join0
   L --> join0
 end
   join0 --> S{"敵は生きて<br/>いるか?"}
