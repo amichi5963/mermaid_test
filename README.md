@@ -18,7 +18,7 @@ Mermaidを触ってみよう
 
 ## 解答
 ```mermaid
-flowchart TB;
+flowchart LR;
   start([開始]) --> A[階層を生成]
 subgraph ゲーム
   W -->|"true"| A
