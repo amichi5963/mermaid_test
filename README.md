@@ -21,18 +21,6 @@ Mermaidを触ってみよう
 flowchart LR;
   start([開始]) --> A[階層を生成]
 subgraph ゲーム
-subgraph ターンエンド処理
-  W{"階段に到着?"}
-  W -->|"false"| X{"HP>0?"}
-end
-subgraph 敵の行動
-  S{"敵は生きて<br/>いるか?"} -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
-  S -->|"false"| join2{" "}
-  T -->|"true"| U[攻撃]
-  T -->|"false"| V[移動]
-  U -->join2
-  V -->join2
-end
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
 subgraph 階層開始
@@ -45,6 +33,7 @@ subgraph 階層開始
   E -->join
   F -->join
 end
+
 subgraph プレイヤーの行動
   join --> G
 subgraph コマンド
@@ -74,6 +63,19 @@ end
   Q -->join1
   R -->join1
   join1 --> join3{" "}
+end
+
+subgraph ターンエンド処理
+  W{"階段に到着?"}
+  W -->|"false"| X{"HP>0?"}
+end
+subgraph 敵の行動
+  S{"敵は生きて<br/>いるか?"} -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
+  S -->|"false"| join2{" "}
+  T -->|"true"| U[攻撃]
+  T -->|"false"| V[移動]
+  U -->join2
+  V -->join2
 end
   join3 --> S
   join2 --> W
