@@ -79,8 +79,10 @@ end
 end
 
 subgraph 敵の行動
-  S{"敵は生きて<br/>いるか?"} -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
-  S -->|"false"| join2{" "}
+  S{"敵は生きて<br/>いるか?"} -->|"true"| EnView{"プレイヤーが<br/>視界内に<br/>いるか?"}
+  EnView -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
+  EnView -->||"false"| join2{" "}
+  S -->|"false"| join2
   T -->|"true"| U[攻撃]
   T -->|"false"| V[移動]
   U -->join2
