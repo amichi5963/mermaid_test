@@ -104,11 +104,11 @@ end
   join3 --> S
   join2 --> W
   
+  X -->|"false"| death["あなたは力尽き、倒れた"]
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
 end
 
   Goal -->|冒険を続ける| G
-  X -->|"false"| death["あなたは力尽き、倒れた"]
   death -->finish(["終了"])
   Goal -->|塔を降りる| finish
 ```
