@@ -118,7 +118,6 @@ end
   Qes -->|冒険を続ける| G
   Qes -->|塔を降りる| joinEnd
 
-  joinEnd --> finish
 ```
 
 ## シーケンス図
