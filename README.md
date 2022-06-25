@@ -58,7 +58,6 @@ subgraph コマンド
   NoMakimono -->join0{" "}
   H -->|else       | J["行動に失敗"]
   J --> join0
-  L --> join0
 end
   join0 --> join3
 subgraph 巻物処理
