@@ -46,11 +46,10 @@ subgraph 財宝
   Box --> joinT
   Armer --> joinT
 end
-
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
-
-subgraph プレイヤーの行動
   Goal -->|冒険を続ける| G
+  
+subgraph プレイヤーの行動
   join --> G
   joinT -->G
   G --> H{"何が入力<br/>された？"}
