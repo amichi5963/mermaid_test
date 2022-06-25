@@ -71,16 +71,16 @@ subgraph 移動先処理
   I --> M{"移動先は<br/>エリア内か？"}
   M -->|true| N["移動"]
   M -->|false| CantMove["塔の壁から出ることは出来ません"]
-  CantMove --> J
   N --> O{"移動先は？"}
   O -->|"敵"| P["敵を倒す"]
   O -->|"アイテム"| Q["アイテムを取得"]
   O -->|"瓦礫"|　R["ダメージ"]
-end
   O -->|"道"| join1{" "}
   P -->join1
   Q -->join1
   R -->join1
+end
+  CantMove --> J
   join1 --> join3
   DelEnd --> join3
 end
