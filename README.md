@@ -105,12 +105,13 @@ end
   join2 --> W
   
   X -->|"false"| death["あなたは力尽き、倒れた"]
+  death --> QesD{"リプレイ?"}
+  QesD -->|"リプレイ"| A
+  QesD -->|"やめる"| finish(["終了"])
+
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
   Goal --> Qes{"冒険を続ける?"}
-
-
   Qes -->|冒険を続ける| G
-  death -->finish(["終了"])
   Qes -->|塔を降りる| finish
 ```
 
