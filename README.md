@@ -59,12 +59,12 @@ subgraph プレイヤーの行動
   H -->|5 | K{"巻物を<br/>持っている？"}
 subgraph 巻物処理
   K -->|false| NoMakimono["巻物を<br/>持っていません"]
-  L --> DelStt[/破壊<br/>Start\]
+  L --> DelStt[/破壊ループ<br/>Start\]
   DelStt --> Kill["敵を倒す"]
   Kill --> Break["瓦礫を道にする"]
   Break --> For{"視界内全マス<br/>破壊した?"}
   For -->|False| Kill
-  For -->|True| DelEnd[\破壊<br/>End/]
+  For -->|True| DelEnd[\破壊ループ<br/>End/]
 end
 subgraph 移動先処理
   I --> M{"移動先は<br/>エリア内か？"}
