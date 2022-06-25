@@ -28,12 +28,12 @@ subgraph 階層開始
   B -->|1| C["あらたな冒険者が<br/>また塔を登る……"]
   B -->|else| D{"現在の階層%3"}
   D -->|1| E["難易度増加表示"]
-  D -->|2| Takara["財宝を入手"]
   D -->|else| F["階数のみの表示"]
   C -->join{" "}
   E -->join
   F -->join
 end
+  D -->|2| Takara["財宝を入手"]
 subgraph 財宝
   Takara -->|薬| Kusuri["HPを回復"]
   Takara -->|薬膳の指輪| Ring["回復量アップ"]
@@ -41,10 +41,10 @@ subgraph 財宝
   Takara -->|箱付き巻物| Box["巻物の所持上限アップ<br/>巻物入手"]
   Takara -->|鎧|　Armer["防御力アップ"]
   Kusuri --> joinT{" "}
-  Ring --> JoinT
-  Grass --> JoinT
-  Box --> JoinT
-  Armer --> JoinT
+  Ring --> joinT
+  Grass --> joinT
+  Box --> joinT
+  Armer --> joinT
 end
 subgraph プレイヤーの行動
   join --> G
