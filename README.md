@@ -36,7 +36,8 @@ subgraph プレイヤーの行動
   G --> H{"何が入力<br/>された？"}
   H -->|5| K{"巻物を<br/>持っているか？"}
   K -->|true| L["巻物の使用"]
-  K -->|false| join0{" "}
+  K -->|false| NoMakimono["巻物を<br/>持っていません"]
+  NoMakimono -->join0{" "}
   H -->|else| J["行動に失敗"]
   J --> join0
   L --> join0
