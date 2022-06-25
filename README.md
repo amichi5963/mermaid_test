@@ -18,7 +18,7 @@ Mermaidを触ってみよう
 
 ## 解答
 ```mermaid
-flowchart LR;
+flowchart TB;
   start([開始]) --> A[階層を生成]
 subgraph ゲーム
   W -->|"true"| A
@@ -55,8 +55,8 @@ subgraph プレイヤーの行動
   K -->|false| NoMakimono["巻物を<br/>持っていません"]
   K -->|true| L["巻物の使用"]
   H -->|2or4or6or8| I["移動先を決定"]
-  NoMakimono -->J
-  H -->|else       | J["行動に失敗"]
+  NoMakimono --> J
+  H -->|else| J["行動に失敗"]
   join0 --> join3
 subgraph 巻物処理
   L --> DelStt[/破壊<br/>Start\]
