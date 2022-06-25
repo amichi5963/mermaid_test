@@ -109,7 +109,7 @@ end
   join2 --> W
 end
   X -->|"false"| finish(["終了"])
-  Goal -->|塔を降りる| --> finish
+  Goal -->|塔を降りる| finish
 ```
 
 ## シーケンス図
