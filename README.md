@@ -20,7 +20,7 @@ Mermaidを触ってみよう
 ```mermaid
 flowchart LR;
   start([開始]) --> A[階層を生成]
-subgraph ゲーム
+
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
 subgraph 階層開始
@@ -107,7 +107,7 @@ end
   X -->|"false"| death["あなたは力尽き、倒れた"]
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
   Goal --> Qes{"冒険を続ける?"}
-end
+
 
   Qes -->|冒険を続ける| G
   death -->finish(["終了"])
