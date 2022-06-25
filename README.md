@@ -104,12 +104,10 @@ end
   join3 --> S
   join2 --> W
   
-  
-subgraph 死亡処理
   X -->|"false"| death["あなたは力尽き、倒れた"]
   death --> QesD{"リプレイ?"}
   QesD -->|"リプレイ"| A
-end
+
 
   QesD -->|"やめる"| finish(["終了"])
 
