@@ -65,7 +65,7 @@ end
   P -->join1
   Q -->join1
   R -->join1
-  join1 --> join3 {" "}
+  join1 --> join3{" "}
 end
   join3 --> S{"敵は生きて<br/>いるか?"}
 subgraph 敵の行動
