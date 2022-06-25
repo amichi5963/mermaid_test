@@ -47,7 +47,7 @@ subgraph 財宝
   Armer --> joinT
 end
 subgraph Clear クリア
-  B --> Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
+  B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
 end
 
 subgraph プレイヤーの行動
