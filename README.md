@@ -20,7 +20,7 @@ Mermaidを触ってみよう
 ```mermaid
 flowchart LR;
   start([開始]) --> A[階層を生成]
-subgraph ゲーム
+
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
 subgraph 階層開始
@@ -79,7 +79,7 @@ subgraph 敵の行動
 end
   join3 --> S
   join2 --> W
-end
+
   X -->|"false"| finish(["終了"])
 ```
 
