@@ -117,7 +117,7 @@ end
   Goal --> Qes{"冒険を続ける?"}
   Qes -->|冒険を続ける| G
   Qes -->|塔を降りる| joinEnd
-  joinEnd --> Finish(["終了"])
+  joinEnd --> Finish(["終了"]
 
 ```
 
