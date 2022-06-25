@@ -81,6 +81,7 @@ end
   P -->join1
   Q -->join1
   R -->join1
+  join1 --> join3
   DelEnd --> join3
 end
 
