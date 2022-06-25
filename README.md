@@ -39,6 +39,7 @@ subgraph プレイヤーの行動
 subgraph コマンド
   G --> H{"何が入力<br/>された？"}
   H -->|5| K{"巻物を<br/>持っている？"}
+  H -->|2or4or6or8| I["移動先を決定"]
   K -->|true| L["巻物の使用"]
   K -->|false| NoMakimono["巻物を<br/>持っていません"]
   NoMakimono -->join0{" "}
@@ -48,7 +49,6 @@ subgraph コマンド
 end
   join0 --> join3
 subgraph 移動先処理
-  H -->|2or4or6or8| I["移動先を決定"]
   I --> M{"移動先は<br/>エリア内か？"}
   M -->|true| N["移動"]
   M -->|false| CantMove["塔の壁から出ることは出来ません"]
