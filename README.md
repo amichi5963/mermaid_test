@@ -27,7 +27,6 @@ subgraph ターンエンド処理
 end
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
-subgraph プレイヤーの入力
 subgraph 階層開始
   A --> B{"現在の<br/>階層"}
   B -->|1| C["あらたな冒険者が<br/>また塔を登る……"]
@@ -38,6 +37,7 @@ subgraph 階層開始
   E -->join
   F -->join
 end
+subgraph プレイヤーの入力
   join --> G
 subgraph プレイヤーの行動
   G --> H{"何が入力<br/>された？"}
