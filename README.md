@@ -106,11 +106,12 @@ end
   
   X -->|"false"| death["あなたは力尽き、倒れた"]
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
+  Goal --> Qes{"冒険を続ける?"}
 end
 
-  Goal -->|冒険を続ける| G
+  Qes -->|冒険を続ける| G
   death -->finish(["終了"])
-  Goal -->|塔を降りる| finish
+  Qes -->|塔を降りる| finish
 ```
 
 ## シーケンス図
