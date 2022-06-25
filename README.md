@@ -46,9 +46,8 @@ subgraph 財宝
   Box --> joinT
   Armer --> joinT
 end
-subgraph Clear クリア
+
   B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
-end
 
 subgraph プレイヤーの行動
   Goal -->|冒険を続ける| G
@@ -97,7 +96,7 @@ subgraph 敵の行動
   S -->|"false"| NoMove
   NoMove -->join2{" "}
   T -->|"true"| U[攻撃]
-  T -->|"false"| V[移動]
+  T -->|"false"| V[プレイヤーに近付く移動]
   U -->join2
   V -->join2
 end
