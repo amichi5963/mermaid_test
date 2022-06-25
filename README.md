@@ -63,8 +63,7 @@ subgraph 巻物処理
   DelStt --> Kill["敵を倒す"]
   Kill --> Break["瓦礫を道にする"]
   Break --> For{"視界内全マス<br/>破壊した?"}
-  Next["次のマスを処理"] --> Kill
-  For -->|False| Next
+  For -->|False| Kill
   For -->|True| DelEnd[\破壊<br/>End/]
 end
 subgraph 移動先処理
@@ -73,9 +72,11 @@ subgraph 移動先処理
   M -->|false| CantMove["塔の壁から出ることは出来ません"]
   N --> O{"移動先は？"}
   O -->|"敵"| P["敵を倒す"]
-  O -->|"アイテム"| Q["アイテムを取得"]
+  O -->|"巻物"| Q["巻物を取得"]
+  O -->|"薬"| Heal["HPを回復"]
   O -->|"瓦礫"|　R["ダメージ"]
   O -->|"道"| join1{" "}
+  Heal -->join1
   P -->join1
   Q -->join1
   R -->join1
