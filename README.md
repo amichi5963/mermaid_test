@@ -26,16 +26,29 @@ subgraph ゲーム
 subgraph 階層開始
   A --> B{"現在の<br/>階層"}
   B -->|1| C["あらたな冒険者が<br/>また塔を登る……"]
-  B -->|1以外| D{"現在の階層を<br/>3で割った<br/>あまり"}
+  B -->|else| D{"現在の階層%3"}
   D -->|1| E["難易度増加表示"]
-  D -->|1以外| F["階数のみの表示"]
+  D -->|2| Takara["財宝を入手"]
+  D -->|else| F["階数のみの表示"]
   C -->join{" "}
   E -->join
   F -->join
 end
-
+subgraph 財宝
+  Takara -->|薬| Kusuri["HPを回復"]
+  Takara -->|薬膳の指輪| Ring["回復量アップ"]
+  Takara -->|遠見の眼鏡| Grass["視界アップ"]
+  Takara -->|箱付き巻物| Box["巻物の所持上限アップ<br/>巻物入手"]
+  Takara -->|鎧|　Armer["防御力アップ"]
+  Kusuri --> joinT{" "}
+  Ring --> JoinT
+  Grass --> JoinT
+  Box --> JoinT
+  Armer --> JoinT
+end
 subgraph プレイヤーの行動
   join --> G
+  joinT -->G
 subgraph コマンド
   G --> H{"何が入力<br/>された？"}
   H -->|5 | K{"巻物を<br/>持っている？"}
