@@ -103,9 +103,10 @@ subgraph ターンエンド処理
 end
   join3 --> S
   join2 --> W
+  
+  B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
 end
 
-  B -->|10| Goal["おめでとう<br/>あなたは塔の10階にたどりついた"]
   Goal -->|冒険を続ける| G
   X -->|"false"| death["あなたは力尽き、倒れた"]
   death -->finish(["終了"])
