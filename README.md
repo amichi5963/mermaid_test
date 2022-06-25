@@ -57,7 +57,7 @@ subgraph プレイヤーの行動
   H -->|2or4or6or8| I["移動先を決定"]
   NoMakimono --> J
   H -->|else| J["行動に失敗"]
-  join0 --> join3
+  J --> join3{" "}
 subgraph 巻物処理
   L --> DelStt[/破壊<br/>Start\]
   DelStt --> Kill["敵を倒す"]
@@ -81,7 +81,6 @@ end
   P -->join1
   Q -->join1
   R -->join1
-  J --> join3{" "}
   DelEnd --> join3
 end
 
