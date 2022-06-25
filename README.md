@@ -21,7 +21,6 @@ Mermaidを触ってみよう
 flowchart LR;
   start([開始]) --> A[階層を生成]
 
-subgraph ゲーム
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
 subgraph 階層開始
@@ -115,7 +114,7 @@ end
   Goal --> Qes{"冒険を続ける?"}
   Qes -->|冒険を続ける| G
   Qes -->|塔を降りる| joinEnd
-end
+
   joinEnd --> finish(["終了"])
 ```
 
