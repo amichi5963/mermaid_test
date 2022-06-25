@@ -36,11 +36,11 @@ subgraph プレイヤーの行動
   G --> H{"何が入力<br/>された？"}
   H -->|5| K{"巻物を<br/>持っているか？"}
   K -->|true| L["巻物の使用"]
+end
   K -->|false| join1{" "}
   H -->|else| join1
   L --> join1
   O -->|"道"| join1
-end
 subgraph 移動先処理
   H -->|2or4or6or8| I["移動先を決定"]
   I --> M{"移動先は<br/>エリア内か？"}
