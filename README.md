@@ -40,7 +40,7 @@ subgraph プレイヤーの行動
   H -->|else| join0
   L --> join0
 end
-  join0 --> join1{" "}
+  join0 --> S{"敵は生きて<br/>いるか?"}
 subgraph 移動先処理
   H -->|2or4or6or8| I["移動先を決定"]
   I --> M{"移動先は<br/>エリア内か？"}
@@ -51,11 +51,11 @@ subgraph 移動先処理
   O -->|"アイテム"| Q["アイテムを取得"]
   O -->|"瓦礫"|　R["ダメージ"]
 end
-  O -->|"道"| join1
+  O -->|"道"| join1{" "}
   P -->join1
   Q -->join1
   R -->join1
-  join1 --> S{"敵は生きて<br/>いるか?"}
+  join1 --> S
 subgraph 敵の行動
   S -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
   S -->|"false"| join2{" "}
