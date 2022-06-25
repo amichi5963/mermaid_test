@@ -107,7 +107,8 @@ end
   join3 --> S
   join2 --> W
 end
-  X -->|"false"| finish(["終了"])
+  X -->|"false"| death["あなたは力尽き、倒れた"]
+  death -->finish(["終了"])
   Goal -->|塔を降りる| finish
 ```
 
