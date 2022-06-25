@@ -40,7 +40,6 @@ end
   K -->|false| join1{" "}
   H -->|else| join1
   L --> join1
-  O -->|"道"| join1
 subgraph 移動先処理
   H -->|2or4or6or8| I["移動先を決定"]
   I --> M{"移動先は<br/>エリア内か？"}
@@ -51,6 +50,7 @@ subgraph 移動先処理
   O -->|"アイテム"| Q["アイテムを取得"]
   O -->|"瓦礫"|　R["ダメージ"]
 end
+  O -->|"道"| join1
   P -->join1
   Q -->join1
   R -->join1
