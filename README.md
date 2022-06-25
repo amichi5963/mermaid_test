@@ -37,9 +37,9 @@ subgraph 階層開始
   E -->join
   F -->join
 end
-subgraph プレイヤーの入力
-  join --> G
 subgraph プレイヤーの行動
+  join --> G
+subgraph コマンド
   G --> H{"何が入力<br/>された？"}
   H -->|5| K{"巻物を<br/>持っている？"}
   K -->|true| L["巻物の使用"]
