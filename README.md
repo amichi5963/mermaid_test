@@ -46,19 +46,19 @@ subgraph 財宝
   Box --> joinT
   Armer --> joinT
 end
+
 subgraph プレイヤーの行動
   join --> G
   joinT -->G
-
   G --> H{"何が入力<br/>された？"}
-  H -->|5 | K{"巻物を<br/>持っている？"}
-  K -->|false| NoMakimono["巻物を<br/>持っていません"]
   K -->|true| L["巻物の使用"]
   H -->|2or4or6or8| I["移動先を決定"]
   NoMakimono --> J
   H -->|else| J["行動に失敗"]
   J --> join3{" "}
 subgraph 巻物処理
+  H -->|5 | K{"巻物を<br/>持っている？"}
+  K -->|false| NoMakimono["巻物を<br/>持っていません"]
   L --> DelStt[/破壊<br/>Start\]
   DelStt --> Kill["敵を倒す"]
   Kill --> Break["瓦礫を道にする"]
