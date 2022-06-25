@@ -21,7 +21,7 @@ Mermaidを触ってみよう
 flowchart LR;
   start([開始]) --> A[階層を生成]
 subgraph ゲーム
-subgraph TB 階層開始
+subgraph 階層開始
   A --> B{"現在の<br/>階層"}
   B -->|1| C["あらたな冒険者が<br/>また塔を登る……"]
   B -->|1以外| D{"現在の階層を<br/>3で割った<br/>あまり"}
@@ -44,16 +44,16 @@ subgraph プレイヤーの行動
   M -->|true| N["移動"]
   M -->|false| join1
   N --> O{"移動先は？"}
-  subgraph 移動先処理
-    O -->|"敵"| P["敵を倒す"]
-    O -->|"アイテム"| Q["アイテムを取得"]
-    O -->|"瓦礫"|　R["ダメージ"]
-  end
   O -->|"道"| join1
   P -->join1
   Q -->join1
   R -->join1
 end
+  subgraph 移動先処理
+    O -->|"敵"| P["敵を倒す"]
+    O -->|"アイテム"| Q["アイテムを取得"]
+    O -->|"瓦礫"|　R["ダメージ"]
+  end
   join1 --> S{"敵は生きて<br/>いるか?"}
 subgraph 敵の行動
   S -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
