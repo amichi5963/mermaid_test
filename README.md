@@ -60,7 +60,8 @@ end
   join1 --> S
 subgraph 敵の行動
   S -->|"true"| T{プレイヤーと<br/>隣接して<br/>いるか?}
-  S -->|"false"| join2{" "}
+  S -->|"false"| CantMove["塔の壁から出ることは出来ません"]
+  CantMove -->join2{" "}
   T -->|"true"| U[攻撃]
   T -->|"false"| V[移動]
   U -->join2
