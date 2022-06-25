@@ -19,9 +19,7 @@ Mermaidを触ってみよう
 ## 解答
 ```mermaid
 flowchart LR;
-  start([開始]) --> Reset[初期化]
-  
-  Reset --> A[階層を生成]
+  start([開始]) --> A[階層を生成]
 
   W -->|"true"| A
   X -->|"true"|G["移動する方向を<br/>入力してください<br/>(テンキー):"]
@@ -110,7 +108,7 @@ end
 
   X -->|"false"| death["あなたは力尽き、倒れた"]
   death --> QesD{"リプレイ?"}
-  QesD -->|"リプレイ"| Reset
+  QesD -->|"リプレイ"| A
   QesD -->|"やめる"| joinEnd{" "}
   
 
