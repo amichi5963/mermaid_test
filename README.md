@@ -61,6 +61,15 @@ subgraph コマンド
   L --> join0
 end
   join0 --> join3
+subgraph 巻物処理
+  L --> DelStt[/破壊<br/>Start\]
+  DelStt --> Kill["敵を倒す"]
+  Kill --> Break["瓦礫を道にする"]
+  Break --> For{"視界内全マス<br/>破壊した?"}
+  For -->|False| Next["次のマスを処理"]
+  Next -->Kill
+  For -->|True| DelEnd[/破壊<br/>End\]
+end
 subgraph 移動先処理
   I --> M{"移動先は<br/>エリア内か？"}
   M -->|true| N["移動"]
@@ -76,6 +85,7 @@ end
   Q -->join1
   R -->join1
   join1 --> join3{" "}
+  DelEnd --> join3
 end
 
 subgraph 敵の行動
